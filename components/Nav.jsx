@@ -8,16 +8,17 @@ function NavFunc() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="/">WEBDEV MANUAL</Navbar.Brand>
+        <Navbar.Brand href="/" className='text-danger'>WM</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/css_tutorial">CSS</Nav.Link>
             <Nav.Link href="/bootstrap_tutorial">Bootstrap</Nav.Link>
-            <Nav.Link href="#link">Backend</Nav.Link>
-            <Nav.Link href="#link">Javascript</Nav.Link>
+            <Nav.Link href="/backend_tutorial">Backend</Nav.Link>
+            <Nav.Link href="/js_tutorial">Javascript</Nav.Link>
             <Nav.Link href="/react_tutorial">React</Nav.Link>
+            <Nav.Link href="/api_tutorial">API</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

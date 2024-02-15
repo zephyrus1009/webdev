@@ -5,7 +5,7 @@ const bootstrap_tutorial = () => {
   return (
     <div>
 
-<h1 className='my-4'>BOOTSTRAP TUTORIAL</h1>
+<h1 className='my-5 text-center'>BOOTSTRAP TUTORIAL</h1>
 
 <h2>GIỚI THIỆU</h2>
           <ul>
@@ -46,12 +46,18 @@ const bootstrap_tutorial = () => {
       </ul>
 
       <h2>Hướng dẫn dùng bootstrap</h2>
-       <Image fluid src="/images/bootstrap mindmap.jpg" alt=""/> 
+       <Image fluid src="/images/bootstrap mindmap.jpg" alt=""/>
+       <p className="caption text-center">Bootstrap Mindmap</p> 
+       <Image fluid src='images/bootstrap spacing.png' />
+       <p className="caption text-center">Bootstrap Spacing</p> 
        <Image fluid src="/images/text-color.png" alt="bootstrap text colors"/>
+       <p className="caption text-center">Bootstrap text colors</p> 
 <Image fluid src="/images/background color.png" alt="bootstrap background colors"/>
+<p className="caption text-center">Bootstrap background colors</p> 
 <Image fluid src="/images/bootstrap grid size.png" alt="bootstrap grid size"/>
+<p className="caption text-center">Bootstrap breakpoints</p> 
 <Image fluid src="/images/bootstrap-button-styles.png" alt="bootstrap button styles"/>
-
+<p className="caption text-center">Bootstrap button styles</p> 
 <h2>Một số khái niệm cần nhớ</h2>
 
 <ul>

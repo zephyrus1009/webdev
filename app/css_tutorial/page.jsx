@@ -5,7 +5,7 @@ const css_tutorial = () => {
   return (
     <div>
 
-<h1 className='my-4'>CSS Tutorial</h1>
+<h1 className='my-5 text-center'>CSS Tutorial</h1>
 
 <h2>SASS/ SCSS</h2>
         <ul>
@@ -51,6 +51,17 @@ const css_tutorial = () => {
             <CodeSnippet code={`img { height: 90%; width: 100%; display: block; object-fit: cover;}`} />
           </li>
 </ol>
+
+<h2>TRICKS</h2>
+        <p>Các mẹo hay về WebDev</p>
+        <ul>
+          <li>
+            Khi style css thì ban đầu nên thêm dòng này để tất các element có
+            border, nhờ đó sẽ dễ xác định vị trí, kích thước. Khi xong thì bỏ
+            đi:
+            <CodeSnippet code={`* { box-sizing: border-box; border: 1px solid; }`} />
+          </li>
+        </ul>
 
     </div>
   )

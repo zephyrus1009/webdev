@@ -1,5 +1,6 @@
 import React from 'react'
 import CodeSnippet from '@/components/CodeSnippet';
+import { Image } from 'react-bootstrap';
 const css_tutorial = () => {
 
   return (
@@ -22,7 +23,8 @@ const css_tutorial = () => {
             >CSS selector</a
           >
         </h2>
-
+<h2>BACKGROUND IMAGE PROPERTIES</h2>
+<Image fluid src='images/css background mindmap.jpg'/>
         <h2>IMG CSS PROPERTIES</h2>
         <p>Nhìn chung với img thì ta quan tâm đến 2 hướng:</p>
         <ul>

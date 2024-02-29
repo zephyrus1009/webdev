@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Rubik } from "next/font/google";
+import "./globals.css"; // thêm vào đây thì mọi file đều có thể truy cập global.css
 import 'bootstrap/dist/css/bootstrap.min.css'; // thêm bootstrap react
 import NavFunc from '@/components/Nav.jsx';
 import { Container } from "react-bootstrap";
-const inter = Inter({ subsets: ["latin"] });
+const rubik = Rubik({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={rubik.className}>
         <Container>
         <NavFunc />
       {children}

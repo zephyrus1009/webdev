@@ -40,6 +40,8 @@ const react_tutorial = () => {
           index.js render App với file html đề cập ở trên.
         </li>
       </ul>
+      <h3>Function Component</h3>
+      <Image fluid src='images/function component mindmap.jpg'/>
       <h3>
         <a href="https://www.w3schools.com/react/react_useeffect.asp"
           >React Hook</a
@@ -283,6 +285,24 @@ const react_tutorial = () => {
           giải quyết được vấn đề trên.
         </li>
         <li>
+          Lưu ý: Cần sự bố cục hợp lý giữa server component (load ban đầu nhanh hơn) và client component (lúc dùng tương tác mượt mà hơn) thì mới có ý nghĩa. Nếu đẩy hết thành client component thì vô nghĩa. Do đó trên page hiển thị, tất cả những phần không cần tương tác với người dùng như ảnh, text,...đều phải để trong server component (toàn bộ phần chính của page). Còn tất cả những phần có tương tác với người dùng như button, search,... thì phải tách ra thành component riêng dưới dạng client component và chèn vào.
+          <Image fluid
+            src="images\client component and sever side component.png"
+            alt="client side components vs server components"
+          />
+        </li>
+        <li>
+          Vậy khi nào thì dùng server components, khi nào thì dùng client
+          components? nextjs khuyến khích là đơn giản nhất thì lúc nào cũng dùng
+          server component cho đến khi báo lỗi thì chuyển sang client
+          components (cần thì tách ra thành component riêng). Còn muốn hiểu kỹ thì nhìn ảnh (khi muốn dùng các khả năng
+          của React như tính tương tác, hook):
+          <Image fluid
+            src="images\when to use server components or client components.png"
+            alt=""
+          />
+        </li>
+        <li>
           Vấn đề route trong nextjs cũng đơn giản hơn. route trong nextjs là
           file-based route. Mỗi folder trong folder app sẽ là một rout và tên
           folder đó sẽ thành route path luôn. Ví dụ trong app có folder about
@@ -347,13 +367,7 @@ const react_tutorial = () => {
         <li>
           Tất cả các file nằm trong folder app sẽ là server side component
         </li>
-        <li>
-          Nhờ bố cục kết hợp cả server side component và client side component
-          <Image fluid
-            src="images\client component and sever side component.png"
-            alt="client side components vs server components"
-          />
-        </li>
+        
         <li>
           Nếu muốn biến một file thành client side component (như khi cần sử
           dụng state, hook hoặc các chức năng khác của react) thì ta phải thêm
@@ -364,15 +378,8 @@ const react_tutorial = () => {
           />
         </li>
         <li>
-          Vậy khi nào thì dùng server components, khi nào thì dùng client
-          components? nextjs khuyến khích là đơn giản nhất thì lúc nào cũng dùng
-          server component cho đến khi báo lỗi thì chuyển sang client
-          components. Còn muốn hiểu kỹ thì nhìn ảnh (khi muốn dùng các khả năng
-          của React như tính tương tác, hook):
-          <Image fluid
-            src="images\when to use server components or client components.png"
-            alt=""
-          />
+          Thay đổi font cho app thực hiện ở file layout như ảnh:
+          <Image fluid src='images/thay doi font.png' />
         </li>
       </ul>
       <h3>NextJS front-end route</h3>
@@ -422,29 +429,6 @@ const react_tutorial = () => {
         </li>
       </ul>
 
-      <h3>Nextjs backend route with API</h3>
-      <p>
-        Để làm được điều này thì tất cả các route muốn tạo phải là các folder
-        trong folder API. Và trong mỗi folder đó ta sẽ tạo một file route.js
-        File này sẽ chứa code hỗ trợ việc route.
-      </p>
-      <Image fluid src="images\api route example.png" alt="" />
-      <h2>So sánh front-end route và back-end route</h2>
-      <ul>
-        <li>
-          Về ý tưởng thì frontend route có mục đích là các đường dẫn user có thể
-          hiểu được, giúp user chuyển giữa các page, các vị trí của web. Trong
-          khi đó backend route lại nhằm giúp hệ thống vận hành, liên kết ngầm
-          giữa các chức năng để app có thể hoạt động được, và không nhằm mục
-          đích giúp user có thể hiểu được nó.
-        </li>
-        <li>
-          Về cấu trúc thì frontend route là các (file page.js bên trong các
-          folder nằm tại folder app). Còn backend route là các (file route.js
-          bên trong các folder nằm trong folder API).
-        </li>
-      </ul>
-
       <h3>Metadata</h3>
       <p>Nextjs hỗ trợ 2 phương án là:</p>
       <ol>
@@ -461,6 +445,7 @@ const react_tutorial = () => {
       </ol>
 
       <h3>Data fetching</h3>
+      <p>fetch data chính là kéo data từ API (kể cả API ngoài hoặc chính là app/api của nextjs)</p>
       <p>Nextjs có 3 phương án data fetching là: </p>
       <ul>
         <li>
@@ -478,9 +463,22 @@ const react_tutorial = () => {
           Incremental Static Generation (ISG) kết hợp cả SSR và SSG. Điểm khác
           là data sẽ được update sau mỗi khoảng thời gian nhất định (revalidate)
           <Image fluid src="images\ISG example.png" alt="" />
+          <Image fluid src='images/nextjs fetch data.png'/>
+          Nếu trong phương án này thời gian revalidate được set về 0 thì data sẽ luôn được update. Giống với trong trường hợp SSR.
         </li>
       </ul>
 
+      <h3>Nextjs API</h3>
+      <ul>
+        <li>Hiểu ngắn gọn là nextjs hỗ trợ tạo API. API này có thể truy cập từ chính trong app thông qua fetch hoặc truy cập từ ngoài app. Vì vậy, nó phù hợp cho việc viết thêm mobile app,... để có thể lấy data từ web.</li>
+      <li>
+        Để làm được điều này thì tất cả các route muốn tạo phải là các folder
+        trong folder API. Và trong mỗi folder đó ta sẽ tạo một file route.js
+        File này sẽ chứa code hỗ trợ việc route.
+      </li>
+      <Image fluid src="images\api route example.png" alt="" />
+      </ul>
+      
       
       <h3>next-auth</h3>
       có thể tham khảo document về phần này tại
@@ -562,7 +560,8 @@ const react_tutorial = () => {
         </li>
       </ol>
 </div>
-
+<h3>Next auth, google cloud, </h3>
+<Image fluid src='images/nextauth google provider mongodb mindmap.jpg'/>
 <div>
       <h2>Mongoose basic</h2>
       <h3>Giới thiệu</h3>
@@ -574,6 +573,7 @@ const react_tutorial = () => {
           Dữ liệu dạng schema (tên, kiểu dữ liệu, giá trị) cũng chính là dạng dữ
           liệu sẽ được lưu trên MongoDB collection.
         </li>
+        <li>Lưu ý: mongoose không đặt ở client component (vì bảo mật, vì client component chỉ dùng để render ui và quản lý các local state)</li>
       </ul>
       <h3>Tham khảo</h3>
       <ul>

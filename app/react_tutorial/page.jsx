@@ -777,6 +777,10 @@ const react_tutorial = () => {
             alt=""
           />
         </li>
+        <li>
+          Nếu chèn ảnh ở ngoài vào app, thì phải thêm link của host vào file jsconfig:
+        <Image fluid src='images/sua loi chen anh ngoai.png'/>
+        </li>
       </ul>
 </div>
 

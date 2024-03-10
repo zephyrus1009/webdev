@@ -428,7 +428,8 @@ const react_tutorial = () => {
           cần phải là client component. Do đó trong file phải có 'use client'
         </li>
       </ul>
-
+<h3>Nextjs dynamic route</h3>
+<Image fluid src='images/nextjs api route.jpg'/>
       <h3>Metadata</h3>
       <p>Nextjs hỗ trợ 2 phương án là:</p>
       <ol>

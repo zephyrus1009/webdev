@@ -8,7 +8,10 @@ function NavFunc() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
+        <div>
         <Navbar.Brand href="/" className='text-danger'>WM</Navbar.Brand>
+        </div>
+        <div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -21,6 +24,9 @@ function NavFunc() {
             <Nav.Link href="/api_tutorial">API</Nav.Link>
           </Nav>
         </Navbar.Collapse>
+        </div>
+        
+        
       </Container>
     </Navbar>
   );

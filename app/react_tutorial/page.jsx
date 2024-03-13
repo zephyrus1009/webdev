@@ -1,6 +1,7 @@
 import React from "react";
 import { Image } from "react-bootstrap";
 import CodeSnippet from "@/components/CodeSnippet";
+import Link from "next/link";
 const react_tutorial = () => {
   return (
     <div>
@@ -146,7 +147,7 @@ const react_tutorial = () => {
             />
           </li>
         </ul>
-        <h4>useEffect</h4>
+        <h4><Link href={'https://blog.logrocket.com/useeffect-react-hook-complete-guide/'}>useEffect</Link> </h4>
 
         <ul>
           <li>
@@ -157,6 +158,7 @@ const react_tutorial = () => {
             useEffect sẽ gồm 2 arguments: một hàm và một mảng (mảng là optional,
             không có cũng được).
             <CodeSnippet code={`useEffect(() => {}, [dependencies])`} />
+            <Image fluid src='images/useEffect hook.png' />
           </li>
           <li>các giá trị trong mảng gọi là dependencies.</li>
           <li>
@@ -178,6 +180,7 @@ const react_tutorial = () => {
                     //Runs only on the first render
                   }, []);`}
                 />
+                Có thể hiểu nguyên lý ở đây là effect sẽ chạy mỗi khi dependency thay đổi. Tuy nhiên, vì array ở đây rỗng, tương ứng với dependency sẽ không thay đổi, nên effect chỉ chạy một lần duy nhất ở lần render đầu tiên.
               </li>
               <li>
                 TH3: Nếu có dependencies: useEffect sẽ được thực thi mỗi khi các
@@ -210,6 +213,11 @@ const react_tutorial = () => {
               src="/images/useeffect run on first render.png"
               alt=""
             />
+          </li>
+          <li>Lưu ý: Việc có empty array hoặc có array với dependencies thường là cực kỳ quan trọng. Vì nó tránh được việc effect chạy thừa hoặc chạy infinite. Nguyên nhân như sau: Giả sử effect không có array, tức nó sẽ chạy mỗi khi component chứa nó được render. Nhưng nếu như component này chứa nhiều state hoặc variable thì rất có thể mỗi khi state hoặc variable thay đổi đều khiến cho component rerender, dẫn đến effect chạy không cần thiết. Một số trường hợp còn có thể dẫn đến chạy infinite.</li>
+          <li>Vậy thế nào thì là dependencies: Theo khuyến nghị thì tất cả các local variables, local states bên trong component chứa useEffect thì đều có thể coi thành dependencies đưa vào trong array. </li>
+          <li>Một lưu ý khác là nên viết phần code được gọi khi effect chạy luôn trong useEffect, chứ không viết ở bên ngoài. Vì như đã phân tích, ta muốn effect chạy khi dependencies thay đổi, chứ không phải chạy mỗi khi component rerender. Do đó, viết code ở trong effect sẽ tránh phần code bị render thừa mỗi khi component rerender.
+            <Image fluid src='write code inside useEffect.png' />
           </li>
         </ul>
         <h2>Optional chaining operator ?.</h2>
@@ -576,16 +584,16 @@ const react_tutorial = () => {
         <h4>Cách gán, lấy info từ session với next auth </h4>
         <ul>
           <li>Cách 1: Lấy info default rồi pass gọi api
-          <Image fluid src="images/next auth sesion-1.png" />
-        <Image fluid src="images/next auth session - 2.png" />
-        Cách này chỉ lấy ra được các info default của session như: name, email, password. 
-        Sau đó, dùng info thu được để call api, kết nối và lấy info từ database. Ta sẽ ưu tiên dùng cách này.
+            <Image fluid src="images/next auth sesion-1.png" />
+            <Image fluid src="images/next auth session - 2.png" />
+            Cách này chỉ lấy ra được các info default của session như: name, email, password.
+            Sau đó, dùng info thu được để call api, kết nối và lấy info từ database. Ta sẽ ưu tiên dùng cách này.
           </li>
-          <li>Cách 2: Module augmentation. Đại ý của phương pháp này là làm tuỳ biến, kết hợp mở rộng defaultSession của Next Auth để lấy được các info mong muốn luôn. 
-            <Link href='https://reacthustle.com/blog/extend-user-session-nextauth-typescript?expand_article=1'>How to Extend User and Session in NextAuth.js (Typescript)</Link>
+          <li>Cách 2: Module augmentation. Đại ý của phương pháp này là làm tuỳ biến, kết hợp mở rộng defaultSession của Next Auth để lấy được các info mong muốn luôn.
+            <Link href='https://reacthustle.com/blog/extend-user-session-nextauth-typescript?expand_article=1'>How to Extend User and Session in NextAuth.js</Link>
           </li>
         </ul>
-        
+
         <h3>Nexjs app Deployment</h3>
         <ol>
           <li>Đảm bảo project đã update lên github</li>

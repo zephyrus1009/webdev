@@ -592,6 +592,9 @@ const react_tutorial = () => {
           <li>Cách 2: Module augmentation. Đại ý của phương pháp này là làm tuỳ biến, kết hợp mở rộng defaultSession của Next Auth để lấy được các info mong muốn luôn.
             <Link href='https://reacthustle.com/blog/extend-user-session-nextauth-typescript?expand_article=1'>How to Extend User and Session in NextAuth.js</Link>
           </li>
+          <li>Cách 3: Thêm trực tiếp vào session ở auth...route.js như sau:
+            <Image fluid src='images/add  more info to session.png' />
+          </li>
         </ul>
 
         <h3>Nexjs app Deployment</h3>
@@ -623,6 +626,8 @@ const react_tutorial = () => {
         <h2>Tạo database với mongoDB</h2>
         <h3>Tổng quan về database, mongoDB, mongoose</h3>
         <Image fluid src="images/mongodb mindmap.jpg" alt="" />
+        <h3>So sánh tạo nested vs multiple documents</h3>
+        <Image fluid src='so sanh nested vs multiple documents.png'/>
         <h3>Thiết lập kết nối với mongoDB database</h3>
         <ol>
           <li>

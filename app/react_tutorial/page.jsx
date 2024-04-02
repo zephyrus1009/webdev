@@ -43,8 +43,20 @@ const react_tutorial = () => {
             và file index.js render App với file html đề cập ở trên.
           </li>
         </ul>
+        <h3><Link href={'https://www.freecodecamp.org/news/javascript-object-destructuring-spread-operator-rest-parameter/'}>Destructuring</Link></h3>
         <h3>Function Component</h3>
         <Image fluid src="images/function component mindmap.jpg" />
+        <h3><Link href={'https://www.npmjs.com/package/react-countdown-circle-timer?activeTab=readme'}>React countdown cirlce timer</Link></h3>
+        <h3><Link href={'https://react-icons.github.io/react-icons/'}>React Icon</Link></h3>
+        <h3>Cách pass parameter cho function được gọi trong onClick event của Button</h3>
+        <ul>
+          <li>Cách pass parameter bất kỳ cho onClick
+            <Image fluid src='images/pass parameter for button onClick.png' />
+          </li>
+          <li>Cách pass chính value của button vào onClick event function
+            <Image fluid src='images/pass button value to onclick event.png' />
+          </li>
+        </ul>
         <h3>
           <a href="https://www.w3schools.com/react/react_useeffect.asp">
             React Hook
@@ -146,7 +158,43 @@ const react_tutorial = () => {
               alt=""
             />
           </li>
+          <li>Spread operator cũng dùng khi update nhiều properties một lúc trong state. Như trong ảnh dưới đây, có thể thêm vào item 2,... vào updatedValue để udpate nhiều properties của state một lúc:
+            <CodeSnippet code={`const [shopCart, setShopCart] = useState({item1:"Juice"});
+ const handleChange = (e) => {
+ let updatedValue = {};
+ updatedValue = {item1:e.target.value};
+ setShopCart(shopCart => ({
+      ...shopCart,
+      ...updatedValue
+    }));
+  }`} />
+          </li>
+          <li>Xoá một properties khỏi object state:
+            <Image fluid src='images/delete property from object state.png' />
+          </li>
+          <li>Dùng spread operator để thay đổi giá trị của state dạng mảng array:
+            <CodeSnippet code='const [state, setState] = useState(["a", "b", "c"]);
+
+function updateState(){
+
+  setState(prevState => ({ ...prevState, "d" }));
+  //new state becomes ["a", "b", "c", "d"]
+};'/>
+          </li>
+          <li>update nested state:
+            <Image fluid src='images/update nested state.png' />
+          </li>
+          <li>update giá trị của state dạng array of object:
+            Giả sử có state:
+            <CodeSnippet code={`const [names, setNames] = useState([
+  { id: 1, name: "John" },
+  { id: 2, name: "Mary" },
+]);`} />
+            Thì để thay đổi giá trị properties của một object nào đó trong array thì ta nên làm như sau:
+            <Image fluid src='images/update state array of objects.png' />
+          </li>
         </ul>
+
         <h4><Link href={'https://blog.logrocket.com/useeffect-react-hook-complete-guide/'}>useEffect</Link> </h4>
 
         <ul>
@@ -217,7 +265,7 @@ const react_tutorial = () => {
           <li>Lưu ý: Việc có empty array hoặc có array với dependencies thường là cực kỳ quan trọng. Vì nó tránh được việc effect chạy thừa hoặc chạy infinite. Nguyên nhân như sau: Giả sử effect không có array, tức nó sẽ chạy mỗi khi component chứa nó được render. Nhưng nếu như component này chứa nhiều state hoặc variable thì rất có thể mỗi khi state hoặc variable thay đổi đều khiến cho component rerender, dẫn đến effect chạy không cần thiết. Một số trường hợp còn có thể dẫn đến chạy infinite.</li>
           <li>Vậy thế nào thì là dependencies: Theo khuyến nghị thì tất cả các local variables, local states bên trong component chứa useEffect thì đều có thể coi thành dependencies đưa vào trong array. </li>
           <li>Một lưu ý khác là nên viết phần code được gọi khi effect chạy luôn trong useEffect, chứ không viết ở bên ngoài. Vì như đã phân tích, ta muốn effect chạy khi dependencies thay đổi, chứ không phải chạy mỗi khi component rerender. Do đó, viết code ở trong effect sẽ tránh phần code bị render thừa mỗi khi component rerender.
-            <Image fluid src='write code inside useEffect.png' />
+            <Image fluid src='images/write code inside useEffect.png' />
           </li>
         </ul>
         <h2>Optional chaining operator ?.</h2>
@@ -563,6 +611,15 @@ const react_tutorial = () => {
         <a href="https://next-auth.js.org/getting-started/introduction">
           next-auth.js.org
         </a>
+        <h4>Cấu trúc file route.js của nextauth</h4>
+        <ul>
+          <li>Về cơ bản gồm 2 phần chính là provider và callbacks. Trong đó provider sẽ chứa các provider hỗ trợ quá trình đăng nhập còn callbacks thì sẽ chứa các hàm async phục vụ các tác vụ như signIn, signOut, session,...</li>
+          <li>
+            Phần callbacks chứa các async function phục vụ tác vụ, cần chỉnh hàm nào thì viết hàm đấy ra, không cần thì thôi.
+            <Image fluid src='images/nextauth callbacks.png' />
+          </li>
+          <li>Tham khảo chi tiết về các hàm trong callbacks tại <Link href='https://next-auth.js.org/configuration/callbacks'>đây</Link></li>
+        </ul>
         <h4>next auth secret</h4>
         <Image fluid src="images/nextauth_secret.png" alt="" />
         <p>Để tạo nextauth_secret thì có một vài cách sau:</p>
@@ -581,7 +638,17 @@ const react_tutorial = () => {
             </a>
           </li>
         </ul>
+        <h4>So sánh session strategy: jwt vs database</h4>
+        <ul>
+          <li>jwt:
+            <Image fluid src='images/session jwt strategy.png' />
+          </li>
+          <li>databse:
+            <Image fluid src='images/session database strategy.png' />
+          </li>
+        </ul>
         <h4>Cách gán, lấy info từ session với next auth </h4>
+        <h5>Các cách không chính thống:</h5>
         <ul>
           <li>Cách 1: Lấy info default rồi pass gọi api
             <Image fluid src="images/next auth sesion-1.png" />
@@ -596,7 +663,27 @@ const react_tutorial = () => {
             <Image fluid src='images/add  more info to session.png' />
           </li>
         </ul>
-
+        <h5>Các cách chính thống:</h5>
+        <ul>
+          <li>Cách 1: Dùng JWT
+            <ul>
+              <li>Cách 1a: Dùng token.sub
+                <Image fluid src="images/access user id using token sub.png" />
+              </li>
+              <li>Cách 1b: Dùng user
+                <Image fluid src='images/access user id using user.png' />
+              </li>
+            </ul>
+          </li>
+          <li>Cách 2: Dùng database
+            <Image fluid src='images/get user id using database strategy.png' />
+          </li>
+        </ul>
+        <h4>Cách redirect khi sử dụng hàm signIn, signOut</h4>
+        Sau khi signIn, signOut thành công thì ta sẽ muốn redirect đến một page nào đó. Thì chỉ cần pass url vào hàm khi gọi như sau:
+        <Image fluid src='images/add url to signin signout nextauth.png' />
+        Ví dụ:
+        <Image fluid src='images/nextauth signOut example .png' />
         <h3>Nexjs app Deployment</h3>
         <ol>
           <li>Đảm bảo project đã update lên github</li>
@@ -609,7 +696,7 @@ const react_tutorial = () => {
             <Image fluid src="images/vercel env.png" alt="" />
           </li>
           <li>
-            Tiếp theo phải sửa cả api ở google cloud
+            Tiếp theo phải sửa cả api ở google cloud (nếu dùng)
             <Image fluid src="images/google api edit.png" alt="" />
           </li>
           <li>
@@ -619,15 +706,35 @@ const react_tutorial = () => {
             lại ở environment variables ở phần setting của project trên vercel.
             <Image fluid src="images/vercel redeploy.png" alt="" />
           </li>
+          <li>Lưu ý: Tại environment variable ta không tạo MONGODB_URI vội, bước này sẽ được làm ở quá trình Integration</li>
         </ol>
       </div>
+      <h3><Link href='https://www.mongodb.com/docs/atlas/reference/partner-integrations/vercel/'>Integration MongoDB Atlas vào Vercel</Link></h3>
 
+      <p>Đây là quá trình add MongoDB Atlas vào Vercel. Quá trình này giúp app deploy trên Vercel có thể truy cập vào database trên MongoDB Atlas. Sau khi thực hiện quá trình này thì trên MongoDB Atlas sẽ có thêm tài khoản truy cập từ Vercel. Còn trên Vercel sẽ có thêm MongoDB Integration và app nào được liên kết sẽ được tạo MONGODB_URI một cách tự động</p>
+      <p>Quá trình add Integration MongoDB vào Vercel: Quá trình này chỉ cần làm 1 lần duy nhất </p>
+      <ul>
+        <li>Truy cập vào <Link href='https://vercel.com/integrations/mongodbatlas'>đây</Link></li>
+        <li>Thực hiện các bước theo link tham khảo</li>
+      </ul>
+      <p>Quá trình liên kết project ở Vercel vào MongoDB Atlas.
+      </p>
+      <ul>
+        <li>Project nào chưa link với mongodb atlas thì có thể vào phần setting của nó, chọn vào integration...</li>
+      </ul>
+      <h3>Chỉnh sửa MONGODB_URI</h3>
+      <h4>Cấu trúc cơ bản của MONGODB_URI</h4>
+      <Image fluid src='images/MONGODB_URI format' />
+      <ul>
+        <li>Sau khi liên kết app trên vercel với mongoDB thì MONGODB_URI sẽ được tạo tự động trong phần environment variables.</li>
+        <li>Tuy nhiên, ta cần phải chỉnh sửa database ở URI như sau: Thay phần /myfirstproject bằng /tendatabase</li>
+      </ul>
       <div>
         <h2>Tạo database với mongoDB</h2>
         <h3>Tổng quan về database, mongoDB, mongoose</h3>
         <Image fluid src="images/mongodb mindmap.jpg" alt="" />
         <h3>So sánh tạo nested vs multiple documents</h3>
-        <Image fluid src='so sanh nested vs multiple documents.png'/>
+        <Image fluid src='so sanh nested vs multiple documents.png' />
         <h3>Thiết lập kết nối với mongoDB database</h3>
         <ol>
           <li>
@@ -718,6 +825,26 @@ const react_tutorial = () => {
             Lưu ý: Vì phải thêm các method vào nên việc khai báo trông phức tạp
             hơn, nhưng 2 kiểu khai báo này là như nhau:
             <Image fluid src="images/schema type same definition.png" alt="" />
+          </li>
+        </ul>
+        <h3><Link href='https://www.slingacademy.com/article/mongoose-how-to-update-values-in-an-array-of-objects/'>CRUD với model phức tạp (chứa array of objects)</Link>
+        </h3>
+        <ul>
+          <li>Giả sử có model schema với array of objects như hình:
+            <Image fluid src='images/schame has array of objects.png' />
+
+          </li>
+          <li>Update:
+            <Image fluid src='images/mongoose basic array update.png ' />
+          </li>
+          <li>Add (expand array)
+            <Image fluid src="images/mongoose adding to the array.png" />
+          </li>
+          <li>Delete:
+            <Image fluid src='images/mongoose delete from array.png' />
+          </li>
+          <li>Advanced:
+            <Image fluid src='images/mongoose advanced operator with array.png' />
           </li>
         </ul>
         <h3>Multiple schemas</h3>
@@ -973,7 +1100,8 @@ const react_tutorial = () => {
           alt=""
         />
       </div>
-
+      <h2>POSTMAN</h2>
+      <Image fluid src='images/postman.png' />
       <div>
         <h2>Tricks</h2>
         <ul>

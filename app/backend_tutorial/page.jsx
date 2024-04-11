@@ -4,9 +4,19 @@ import CodeSnippet from '@/components/CodeSnippet'
 const backend_tutorial = () => {
   return (
     <div>
-<h1 className='my-4 text-center'>BACKEND TUTORIAL</h1>
-<div>
-<h2>GIT, GITHUB</h2>
+      <h1 className='my-4 text-center'>BACKEND TUTORIAL</h1>
+      <div>
+        <h2>CMS</h2>
+        <ul>
+          <li>CMS là viết tắt của Content Manage System</li>
+          <li>Về cơ bản có thể chia làm 2 mảng là CMS (truyền thống) và Headless CMS</li>
+          <li>CMS truyền thống thì chính là phần front end và toàn bộ phần back-end</li>
+          <li>Headless CMS là hệ thống CMS mới, chỉ tập trung vào hỗ trợ quản lý dữ liệu, không quan tâm đến front-end (do đó mới gọi là headless).Còn app thì có thể tương tác đến phần dữ liệu được quản lý này thông qua call API.
+            <Image fluid src='images/webdev/public/images/headless cms.png' />
+          </li>
+          <li>Một số Headless CMS phổ biến như: ButterCMS, Strapi, Drupal,... </li>
+        </ul>
+        <h2>GIT, GITHUB</h2>
         <h3>Giới thiệu về Git và Github</h3>
         <figure>
           <Image fluid src="images\git mindmap.jpg" alt="mindmap git" />
@@ -47,7 +57,7 @@ const backend_tutorial = () => {
             <pre>
               <code>
                 git config --global user.name "My Name"
-git config --global user.email "myemail@example.com"
+                git config --global user.email "myemail@example.com"
               </code>
             </pre>
           </li>
@@ -66,8 +76,8 @@ git config --global user.email "myemail@example.com"
             Để kiểm tra trạng thái, ví dụ như các file nào đang được track hay
             untrack,... thì ta dùng lệnh:
             <pre>
-            <code>git status</code>
-          </pre>
+              <code>git status</code>
+            </pre>
           </li>
           <li>
             Để xem lịch sử thay đổi code,... thì ta gõ:
@@ -109,10 +119,10 @@ git config --global user.email "myemail@example.com"
               <li>
                 Tiếp theo, để đẩy dữ liệu lên thì ta gõ:
                 <pre>
-  <code>
-    git push -u remote_name local_branch_name
-  </code>
-</pre>
+                  <code>
+                    git push -u remote_name local_branch_name
+                  </code>
+                </pre>
                 Trong đó local branch name là nhánh branch nào đó mà ta muốn
                 push data lên.
               </li>
@@ -180,24 +190,24 @@ git config --global user.email "myemail@example.com"
               <li>
                 Để add một file ta gõ:
                 <pre>
-      <code>git add tenfile</code>
-    </pre>
+                  <code>git add tenfile</code>
+                </pre>
               </li>
               <li>
                 Để add nhiều file cùng đuôi, ta gõ:
                 <pre>
-      <code>git add *.duoi</code>
-    </pre>
+                  <code>git add *.duoi</code>
+                </pre>
                 Ví dụ:
                 <pre>
-      <code>git add *.html</code>
-    </pre>
+                  <code>git add *.html</code>
+                </pre>
               </li>
               <li>
                 Để add tất cả các file, ta gõ:
                 <pre>
-      <code>git add .</code>
-    </pre>
+                  <code>git add .</code>
+                </pre>
               </li>
             </ul>
           </li>
@@ -294,8 +304,8 @@ git config --global user.email "myemail@example.com"
             quên không thêm file vào .gitignore và đã track nó. Thêm option
             --cached:
             <pre>
-      <code>git rm --cached README</code>
-    </pre>
+              <code>git rm --cached README</code>
+            </pre>
           </li>
         </ul>
         <h4>Undoing things</h4>
@@ -306,10 +316,10 @@ git config --global user.email "myemail@example.com"
             cần commit, sau đó dùng lệnh commit --amend thì sẽ chỉ xuất hiện
             thành 1 commit mới, thay thế cho commit trước đó. Ví dụ:
             <pre>
-      <code>$ git commit -m 'Initial commit'
-        $ git add forgotten_file
-        $ git commit --amend</code>
-    </pre>
+              <code>$ git commit -m 'Initial commit'
+                $ git add forgotten_file
+                $ git commit --amend</code>
+            </pre>
           </li>
           <li>
             Trường hợp 2: Bỏ bớt file khỏi trạng thái staging area. Ta dùng lệnh
@@ -329,8 +339,8 @@ git config --global user.email "myemail@example.com"
             tenfile. Lưu ý: Các phiên bản git cũ dùng lệnh git checkout. Cú
             pháp:
             <pre>
-    <code>git restore tenfile</code>
-  </pre>
+              <code>git restore tenfile</code>
+            </pre>
           </li>
         </ul>
         <h3>Working with remote</h3>
@@ -341,18 +351,18 @@ git config --global user.email "myemail@example.com"
         </p>
         <h4>Để clone một remote từ trên mạng về ta dùng lệnh git clone.</h4>
         <pre>
-  <code>
-    git clone https://github.com/libgit2/libgit2 tenthaythe
-  </code>
-</pre>
+          <code>
+            git clone https://github.com/libgit2/libgit2 tenthaythe
+          </code>
+        </pre>
         <h4>Fetching and pulling data</h4>
         <ul>
           <li>
             Xem remote có những thay đổi gì về data (thực tế là có kéo data về,
             những ko thay đổi gì data local) gọi là fetching. Cấu trúc lệnh:
             <pre>
-      <code>git fetch remote</code>
-    </pre>
+              <code>git fetch remote</code>
+            </pre>
             Trong đó remote có thể là URL, có thể là tên thay thế, hoặc origin
             (vì khi ta clone một repository thì nó tự được coi là origin)
           </li>
@@ -361,8 +371,8 @@ git config --global user.email "myemail@example.com"
         <h4>Đẩy dữ liệu lên remote (push data)</h4>
         <p>Cấu trúc lệnh:</p>
         <pre>
-  <code>git push ten-remote ten-branch</code>
-</pre>
+          <code>git push ten-remote ten-branch</code>
+        </pre>
         <h4>rename hoặc xoá một remote</h4>
         <p>Lưu ý: đây là các thao tác chỉ ảnh hưởng đến local.</p>
         <ul>
@@ -370,21 +380,21 @@ git config --global user.email "myemail@example.com"
             rename một remote. Giả sử ta đã clone một remote và đặt tên khác cho
             nó là pb, bây giờ ta muốn đổi tên này thành paul thì ta làm như sau:
             <pre>
-      <code>git remote rename pb paul</code>
-    </pre>
+              <code>git remote rename pb paul</code>
+            </pre>
           </li>
           <li>
             Nếu ta muốn remove nó thì ta dùng git remote remove hoặc git remote
             rm. Ví dụ:
             <pre><code>
-      git remote rm paul
-    </code></pre>
+              git remote rm paul
+            </code></pre>
           </li>
         </ul>
         <h3>
           <a
             href="https://www.atlassian.com/git/tutorials/using-branches?section=git-branch"
-            >Git branch</a
+          >Git branch</a
           >
         </h3>
         <figure>
@@ -457,10 +467,10 @@ git config --global user.email "myemail@example.com"
         <pre>
           <code>git push remote-repo crazy-experiment~</code>
         </pre>
-</div>
+      </div>
 
-<div>
-<h2>TERMINAL, SHELL</h2>
+      <div>
+        <h2>TERMINAL, SHELL</h2>
         <ul>
           <li>
             Terminal ban đầu là thuật ngữ dùng để chỉ cổng vật lý giúp kết nối
@@ -520,13 +530,13 @@ git config --global user.email "myemail@example.com"
 
           <li>
             Có thể truy cập trực tiếp đến vị trí nào đó thông qua việc gõ path:
-            <CodeSnippet code={`C:\Users\Bee\Downloads>cd C:\Users\Bee`}/>
-          
+            <CodeSnippet code={`C:\Users\Bee\Downloads>cd C:\Users\Bee`} />
+
           </li>
           <li>
             Tuy nhiên, nếu path có chứa folder mà tên có dấu cách thì ta cho cả
             path vào ""
-            <CodeSnippet code={`C:\Users\Bee\Downloads>cd "C:\Users\Bean thoi"`}/>
+            <CodeSnippet code={`C:\Users\Bee\Downloads>cd "C:\Users\Bean thoi"`} />
           </li>
           <li>Muốn về root (dùng absolute path) thì gõ cd / hoặc cd \</li>
           <li>
@@ -547,7 +557,7 @@ git config --global user.email "myemail@example.com"
           <li>
             Muốn chuyển sang ổ khác (ví dụ từ ổ C sang ổ D) thì chỉ cần gõ tên ổ
             và dấu:
-            <CodeSnippet code={`C:\Users\Bee>D:`}/>
+            <CodeSnippet code={`C:\Users\Bee>D:`} />
           </li>
           <li>
             Đổi màu font và màu chữ trong terminal bằng lệnh color. color ab với
@@ -574,26 +584,26 @@ git config --global user.email "myemail@example.com"
             <code>C:\Users\Bee type abcd.txt</code>
           </li>
           <li>
-            Muốn ghi kết quả của một câu lệnh vào file thì sau câu lệnh thêm: 
-            <CodeSnippet code={`> tenfile`}/>
+            Muốn ghi kết quả của một câu lệnh vào file thì sau câu lệnh thêm:
+            <CodeSnippet code={`> tenfile`} />
             Lưu ý: File ở đây có thể là chưa tồn tại thì sẽ tạo ra file
             mới. Ví dụ:
-            <CodeSnippet code={`C:\Users\Bee dir > abcd.txt`}/>
+            <CodeSnippet code={`C:\Users\Bee dir > abcd.txt`} />
           </li>
           <li>
             Muốn ghi một dòng nào vào file thì dùng:
-            <CodeSnippet code={`echo > noidung tenfile`}/>
+            <CodeSnippet code={`echo > noidung tenfile`} />
             hoặc
-            <CodeSnippet code={`echo >> noidung tenfile`}/>
-            . Trường hợp <CodeSnippet code={`>`}/> là ghi đè, còn <CodeSnippet code={`>>`}/> là thêm vào.
+            <CodeSnippet code={`echo >> noidung tenfile`} />
+            . Trường hợp <CodeSnippet code={`>`} /> là ghi đè, còn <CodeSnippet code={`>>`} /> là thêm vào.
             Vd:
-            <CodeSnippet code={`C:\Users\Bee echo abcdef >> abcd.txt`}/>
+            <CodeSnippet code={`C:\Users\Bee echo abcdef >> abcd.txt`} />
             Đây cũng là cách tạo ra một new file với nội dung nào đó.
           </li>
           <li>
             Muốn tạo một file mới empty (có thể là txt hoặc docx, png, rft) thì
             gõ:
-            <CodeSnippet code={`type nul > filename.txt`}/>
+            <CodeSnippet code={`type nul > filename.txt`} />
             Lưu ý:
             <ul>
               <li>Có thể dùng lệnh echo.</li>
@@ -619,11 +629,11 @@ git config --global user.email "myemail@example.com"
           </li>
           <li>
             List file trong folder ra file text với powershell:
-            <CodeSnippet code={`Get-ChildItem -Include *.doc,*.docx -File -Recurse -ErrorAction SilentlyContinue | Select-Object FullName > filelist.txt`}/>
+            <CodeSnippet code={`Get-ChildItem -Include *.doc,*.docx -File -Recurse -ErrorAction SilentlyContinue | Select-Object FullName > filelist.txt`} />
             <p>Lưu ý: *.doc, *.docx là ví dụ về file types mong muốn liệt kê</p>
           </li>
         </ul>
-</div>
+      </div>
 
 
       <div>
@@ -664,9 +674,9 @@ git config --global user.email "myemail@example.com"
         <h3>Giới thiệu</h3>
         <ul>
           <li>
-            NPM, viết tắt của Node Packages Manager, giống tên gọi của nó, là một trình quản lý các package Javascript. Nó vừa giúp lưu trữ các package được các dev viết ra và up lên, vừa giúp các user khác tải các package đó về theo đúng version mong muốn, quản lý project của user đang gồm các package nào, version bao nhiêu... 
+            NPM, viết tắt của Node Packages Manager, giống tên gọi của nó, là một trình quản lý các package Javascript. Nó vừa giúp lưu trữ các package được các dev viết ra và up lên, vừa giúp các user khác tải các package đó về theo đúng version mong muốn, quản lý project của user đang gồm các package nào, version bao nhiêu...
           </li>
-          <li>NPM gồm 2 phần chính: 
+          <li>NPM gồm 2 phần chính:
             <ol>
               <li>CLI (command line interface) là một giao diện gõ lệnh giúp download hoặc upload các packages</li>
               <li>Một online repository có địa chỉ tại <a href="https://www.npmjs.com/">trang chủ của NPM</a> giúp lưu trữ các packages.</li>
@@ -675,7 +685,7 @@ git config --global user.email "myemail@example.com"
           <li>Khi cài Node là đã tự cài NPM.</li>
         </ul>
         <figure>
-          <Image fluid src="images\how npm works.png" alt="how npm works"/>
+          <Image fluid src="images\how npm works.png" alt="how npm works" />
           <figcaption>How NPM works</figcaption>
         </figure>
 
@@ -690,21 +700,21 @@ git config --global user.email "myemail@example.com"
             package.json làm nhiệm vụ này, nó là một file dạng json. Nhờ có file
             này mà npm biết phải cài những packages nào phụ vụ project.
           </li>
-          <li>Trong file package.json có các phần thông tin cơ bản sau: 
+          <li>Trong file package.json có các phần thông tin cơ bản sau:
             <ul>
               <li>Phần 1 chứa các thông tin cơ bản của project, ta sẽ điền hoặc cho máy tự điền theo mặc định khi tạo file package.json
-                <Image fluid src="images\basic-info-packagejson.png" alt="basic info of package.json file"/> </li>
-                <li>Phần thứ 2 là npm scripts. Phần script này sẽ hỗ trợ chạy command-line tools. Phiên bản gần đây giới thiệu thêm cả npx. Nhìn chung ta không cần quan tâm đến phần này lắm.
-                  <Image fluid src="images\npm script.png" alt="npm script"/>
-                </li>
-                <li>Phần cuối là dependencies và devDependencies. Cả dependencies và devDependencies đều chứa thông tin về các package được cài trong project với format dạng key-value (tên package - phiên bản). Sự khác nhau cơ bản giữa dependencies và devDependencies là dependencies chứa các package thực sự cần thiết để chạy được project (tức xét từ phía production) còn devDependencies sẽ chỉ chứa các package hỗ trợ cho quá trình dev, mà không nhất thiết phải có để chạy được project (ví dụ prettier,...). Thông tin của package nằm ở dependencies hay devDependencies hoàn toàn do ta quyết định khi cài package với các lệnh:  
-                  <ul>
-                    <li>npm install cài vào dependencies</li>
-                    <li>npm install --only=dev hoặc npm install -D sẽ chỉ cài vào devDependencies</li>
-                  </ul>
-                  <Image fluid src="images\dependencies and devDependencies.png" alt="dependencies and devDependencies"/>
-                  <Image fluid src="images\cach doc version package.png" alt="cach doc package version"/>
-                </li>
+                <Image fluid src="images\basic-info-packagejson.png" alt="basic info of package.json file" /> </li>
+              <li>Phần thứ 2 là npm scripts. Phần script này sẽ hỗ trợ chạy command-line tools. Phiên bản gần đây giới thiệu thêm cả npx. Nhìn chung ta không cần quan tâm đến phần này lắm.
+                <Image fluid src="images\npm script.png" alt="npm script" />
+              </li>
+              <li>Phần cuối là dependencies và devDependencies. Cả dependencies và devDependencies đều chứa thông tin về các package được cài trong project với format dạng key-value (tên package - phiên bản). Sự khác nhau cơ bản giữa dependencies và devDependencies là dependencies chứa các package thực sự cần thiết để chạy được project (tức xét từ phía production) còn devDependencies sẽ chỉ chứa các package hỗ trợ cho quá trình dev, mà không nhất thiết phải có để chạy được project (ví dụ prettier,...). Thông tin của package nằm ở dependencies hay devDependencies hoàn toàn do ta quyết định khi cài package với các lệnh:
+                <ul>
+                  <li>npm install cài vào dependencies</li>
+                  <li>npm install --only=dev hoặc npm install -D sẽ chỉ cài vào devDependencies</li>
+                </ul>
+                <Image fluid src="images\dependencies and devDependencies.png" alt="dependencies and devDependencies" />
+                <Image fluid src="images\cach doc version package.png" alt="cach doc package version" />
+              </li>
             </ul>
           </li>
           <li>
@@ -792,7 +802,7 @@ git config --global user.email "myemail@example.com"
           <li>Để thực thi các package với NPM thì quy trình tương đối phức tạp, còn với NPX thì tương đối dễ dàng (thực thi những thư viện đã được cài đặt, chưa được cài đặt, chạy code trực tiếp từ github, kiểm tra version). Ví dụ gọi thư viện create-react-app để tạo một project my-app: npx create-react-app my-app</li>
         </ul>
 
-        </div>
+      </div>
 
 
     </div>

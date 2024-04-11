@@ -44,6 +44,8 @@ const react_tutorial = () => {
           </li>
         </ul>
         <h3><Link href={'https://www.freecodecamp.org/news/javascript-object-destructuring-spread-operator-rest-parameter/'}>Destructuring</Link></h3>
+        <h3>Sort in React</h3>
+        <Image fluid src='images/how to sort in react.png' />
         <h3>Function Component</h3>
         <Image fluid src="images/function component mindmap.jpg" />
         <h3><Link href={'https://www.npmjs.com/package/react-countdown-circle-timer?activeTab=readme'}>React countdown cirlce timer</Link></h3>
@@ -827,6 +829,12 @@ function updateState(){
             <Image fluid src="images/schema type same definition.png" alt="" />
           </li>
         </ul>
+        <h4>Filter data on populate field (Lọc data dựa trên dữ liệu liên kết thông qua populate)</h4>
+        Giả sử có dữ liệu như hình:
+        <Image fluid src='images/basic population.png' />
+        Ta có thể tìm dữ liệu, sau đó lọc trên populate field như sau:
+        <Image fluid src='images/filtering on populate field.png' />
+
         <h3><Link href='https://www.slingacademy.com/article/mongoose-how-to-update-values-in-an-array-of-objects/'>CRUD với model phức tạp (chứa array of objects)</Link>
         </h3>
         <ul>
@@ -925,6 +933,75 @@ function updateState(){
             <Image fluid src="images/populate-1.8.png" alt="" />
           </li>
         </ol>
+      </div>
+
+      <div>
+        <h2>MONGODB AGGREGATION</h2>
+        <h3>Giới thiệu</h3>
+        <ul>
+          <li>Là quá trình xử lý dữ liệu tuần tự qua một hoặc nhiều dữ liệu stage trên MONGODB (quá trình này gọi là pipeline)
+            <Image fluid src='images/mongodb aggregation pipeline example.png' />
+          </li>
+          <li>Các stage được MONGODB xây dựng sẵn, đầu ra của stage này sẽ là đầu vào của stage sau.</li>
+          <li>Trong mỗi stage thì lại có thể thực hiện các accumulator build sẵn. Một số các accumulator phổ biến như sau:
+            <Image fluid src='images/most used accumulator in mongodb.png' />
+          </li>
+          <li>Có thể dùng trực tiếp trên MONGODB ATLAS hoặc dùng code trên IDE.</li>
+          <li>Cú pháp:
+            <Image fluid src="images/cu phap mongodb aggregate.png" />
+          </li>
+          <li>Tham khảo:
+            <ul>
+              <li><Link href={'https://www.mongodb.com/docs/manual/reference/operator/aggregation-pipeline/'}>mongodb.com</Link></li>
+              <li><Link href={'https://www.youtube.com/watch?v=vx1C8EyTa7Y'}>Youtube</Link></li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Một số stages quan trọng</h3>
+        List 10 stages thường gặp nhất:
+        <Image fluid src='images/10 most used stage aggregation in mongodb.png' />
+        <h4>$match</h4>
+        <ul>
+          <li>Filters the documents to pass only the documents that match the specified condition(s) to the next pipeline stage.</li>
+          <li>
+            <CodeSnippet code={`db.articles.aggregate(
+    [ { $match : { author : "dave" } } ]
+);`} />
+          </li>
+        </ul>
+        <h4>$unwind</h4>
+        <ul>
+          <li>Dùng để tách mảng (tách một document có một mảng) thành nhiều document mà mỗi document sẽ chỉ chứa một thành phần trong mảng.</li>
+          <li>Mục tiêu chính của stage này là tách các document phức tạp thành các document đơn giản hơn trước khi tiến hành các thao tác khác như filter, sort, searching.</li>
+          <li>
+            <Image fluid src='images/unwind stage mongodb.png' />
+          </li>
+        </ul>
+        <h4>$lookup</h4>
+        <ul>
+          <li>Dùng để nối các document trong cùng database với nhau theo tiêu chí liên quan. Tác dụng cũng giống như kiểu populate, nhưng mạnh hơn, không chỉ dùng cho ref mà cứ có gì liên quan cũng join được.</li>
+          <li>Lưu ý: Vì sau khi thực hiện lookup thì sẽ thêm vào document một field là array, với tên của field là tự đặt. Vì là một array, nên để đơn giản hoá tiện cho tìm kiếm,... về sau thì theo sau lookup stage nên là unwind stage.</li>
+          <li>Ví dụ 1
+            <Image fluid src='images/lookup stage example.png' />
+          </li>
+          <li>Ví dụ 2:
+            <Image fluid src='images/lookup stage example 2.png' />
+          </li>
+          <li>Ví dụ 3:
+
+          </li>
+        </ul>
+        <h4>$group</h4>
+        <ul>
+          <li>Stage này có tác dụng nhóm các document thành các group theo tiêu chí nào đó.</li>
+          <li>Cấu trúc của $group:
+            <Image fluid src='images/group stage.png' />
+          </li>
+          <li>Ví dụ:
+            <Image fluid src="images/group stage example.png" />
+          </li>
+        </ul>
+
       </div>
 
       <div>

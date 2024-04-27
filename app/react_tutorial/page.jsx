@@ -1177,6 +1177,10 @@ function updateState(){
           alt=""
         />
       </div>
+      <h2>RECHARTS</h2>
+      <h3>Giới thiệu</h3>
+      Là library hỗ trợ vẽ biểu đồ.
+      Link: <Link href={`https://recharts.org/en-US/guide`}>recharts</Link>
       <h2>POSTMAN</h2>
       <Image fluid src='images/postman.png' />
       <div>

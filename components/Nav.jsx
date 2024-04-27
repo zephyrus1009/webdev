@@ -22,6 +22,7 @@ function NavFunc() {
             <Nav.Link href="/js_tutorial">Javascript</Nav.Link>
             <Nav.Link href="/react_tutorial">React</Nav.Link>
             <Nav.Link href="/api_tutorial">API</Nav.Link>
+            <Nav.Link href="/tricks">TRICKS</Nav.Link>
           </Nav>
         </Navbar.Collapse>
         </div>

@@ -7,15 +7,153 @@ const backend_tutorial = () => {
       <h1 className='my-4 text-center'>BACKEND TUTORIAL</h1>
       <div>
         <h2>CMS</h2>
+        <h3>Giới thiệu</h3>
         <ul>
-          <li>CMS là viết tắt của Content Manage System</li>
+          <li>CMS là viết tắt của Content Manage System, là một hệ thống giúp quản lý content trên website thuận tiện hơn.</li>
           <li>Về cơ bản có thể chia làm 2 mảng là CMS (truyền thống) và Headless CMS</li>
           <li>CMS truyền thống thì chính là phần front end và toàn bộ phần back-end</li>
           <li>Headless CMS là hệ thống CMS mới, chỉ tập trung vào hỗ trợ quản lý dữ liệu, không quan tâm đến front-end (do đó mới gọi là headless).Còn app thì có thể tương tác đến phần dữ liệu được quản lý này thông qua call API.
-            <Image fluid src='images/webdev/public/images/headless cms.png' />
+            <Image fluid src='images/headless cms.png' />
           </li>
-          <li>Một số Headless CMS phổ biến như: ButterCMS, Strapi, Drupal,... </li>
+         <li>1.	Ease of Use: A CMS provides a user-friendly interface that allows individuals with minimal technical skills to create, edit, and manage website content. This democratizes content management, making it accessible to non-developers</li> 
+         <li>2.	Efficiency: It streamlines the process of updating and maintaining a website. You can quickly publish new content, update existing pages, and manage media files without needing to write code.</li>
+<li>3.	Collaboration: CMS platforms often support multiple users, allowing teams to collaborate on content creation and management. This is particularly useful for businesses with dedicated content creators, editors, and marketers</li>
+<li>4.	Scalability: As your website grows, a CMS can handle increasing amounts of content and traffic. It also allows for easy integration of new features, such as e-commerce capabilities or social media integration.</li>
+<li>5.	SEO and Marketing: Many CMS platforms come with built-in SEO tools and plugins that help optimize your content for search engines. This can improve your website’s visibility and attract more visitors.</li>
+<li>6.	Security: CMS platforms are regularly updated to address security vulnerabilities. They also offer various plugins and extensions to enhance security, such as spam protection and secure login systems.</li>
+
+<li>7.	Customization: You can customize the look and feel of your website using themes and templates. Additionally, you can extend functionality with plugins and modules tailored to your specific needs.</li>
+<li>8.	Content Organization: A CMS helps you organize your content efficiently, making it easier to manage large volumes of data. This includes categorizing articles, tagging media, and setting up navigation menus.</li>
+
+<li>Một số Headless CMS phổ biến như: ButterCMS, Strapi, Drupal,... </li>
+
         </ul>
+        <h3>How CMS works?</h3>
+        A CMS typically consists of two main components:
+        <ul>
+          <li>1.	Content Management Application (CMA):
+o	The front-end interface where users create and manage content.
+o	Similar to using a word processor like Microsoft Word.</li>
+<li>2.	Content Delivery Application (CDA):
+o	The back-end system that stores content and delivers it to the website.
+o	Ensures that content is displayed correctly to visitors</li>
+        </ul>
+
+<h3>So sánh CMS và Database</h3>
+A database and a Content Management System (CMS) serve different purposes, though they often work together. Here’s a detailed comparison to help clarify their roles:
+<b>Database</b>
+<ul>
+  <li>1.	Purpose:
+  o	A database is designed to store, retrieve, and manage data efficiently. It organizes data in a structured format, making it easily accessible for various applications1.</li>
+  <li>2.	Functionality:
+o	Data Storage: Stores data in tables (relational databases) or other structures (NoSQL databases).
+o	Querying: Provides powerful querying capabilities to retrieve and manipulate data.
+o	Data Integrity: Ensures data consistency and integrity through constraints and relationships1.</li>
+  <li>3.	Examples:
+o	Relational Databases: MySQL, PostgreSQL, SQLite.
+o	NoSQL Databases: MongoDB, Cassandra, Redis2.</li>
+</ul>
+<b>Content Management System (CMS)</b>
+<ul>
+  <li>
+1.	Purpose:
+o	A CMS is software designed to create, manage, and publish digital content. It provides tools for users to easily manage content without needing extensive technical knowledge3.</li>
+<li>2.	Functionality:
+o	User Interface: Offers a user-friendly interface for content creation and management.
+o	Content Organization: Manages content in various formats (text, images, videos) and organizes it into pages, posts, or products.
+o	Publishing Tools: Includes features for scheduling, version control, and workflow management3.</li>
+<li>3.	Examples:
+o	WordPress, Joomla, Drupal, Payload CMS3.</li>
+</ul>
+
+
+
+
+<b>How They Work Together</b>
+•	CMS Uses Database: A CMS typically uses a database to store its content. For example, when you create a blog post in WordPress, the content is stored in a MySQL database. The CMS then retrieves this content from the database to display it on your website.
+<b>Key Differences</b>
+<ul>
+  <li>•	Abstraction Level: A CMS operates at a higher level of abstraction, providing tools for content management and user interaction. A database operates at a lower level, focusing on data storage and retrieval1.</li>
+  <li>•	User Interaction: A CMS is designed for end-users to interact with content, while a database is primarily for developers and applications to store and access data3.</li>
+</ul>
+
+
+<b>Summary</b>
+<ul>
+  <li>•	Database: Efficiently stores and retrieves data, ensuring data integrity and consistency.</li>
+  <li>
+  •	CMS: Simplifies content management and publishing, providing a user-friendly interface and tools for non-technical users.</li>
+</ul>
+
+<h3>Một số CMS phổ biến</h3>
+
+<ul>
+  <li>1.	WordPress:
+o	Best for: Blogs, small to medium-sized websites, and e-commerce (with WooCommerce).
+o	Features: Highly customizable with thousands of themes and plugins, large community support, and user-friendly interface1.</li>
+  <li>2.	Joomla:
+o	Best for: Complex websites and online applications.
+o	Features: Built-in multilingual support, flexible and extensive extensions, and strong user management1.</li>
+  <li>3.	Drupal:
+o	Best for: Large, high-traffic websites and enterprises.
+o	Features: Highly scalable, robust security, and flexible content architecture2.</li>
+  <li>4.	Shopify:
+o	Best for: E-commerce websites.
+o	Features: Easy to set up, extensive e-commerce features, and integrated payment processing3.</li>
+  <li>5.	Wix:
+o	Best for: Small businesses and personal websites.
+o	Features: Drag-and-drop builder, various templates, and built-in SEO tools3.</li>
+  <li>6.	TYPO3:
+o	Best for: Enterprises and large organizations.
+o	Features: Extensive extension library, strong multilingual support, and high flexibility3.</li>
+  <li>7.	Contentful:
+o	Best for: Headless CMS needs.
+o	Features: API-first approach, flexible content modeling, and easy integration with various front-end frameworks2.</li>
+  <li>8.	Payload CMS:
+o	Best for: Developers looking for a highly customizable and modern CMS.
+o	Features: Built with JavaScript/TypeScript, headless architecture, and flexible content management2.</li>
+</ul>
+
+<h3>Giới thiệu về Payload CMS</h3>
+Payload CMS is a headless content management system (CMS) designed for developers. Here are some key features:
+<ul>
+  <li>1.	Headless Architecture: Unlike traditional CMSs, Payload CMS is headless, meaning it provides content via APIs, allowing you to use any front-end technology to display your content.</li>
+  <li>2.	Customizable: It offers a high degree of customization, enabling you to define your own collections, fields, and relationships. This makes it flexible for various use cases.</li>
+  <li>3.	Built with JavaScript/TypeScript: Payload CMS is built using modern JavaScript and TypeScript, making it a great choice for developers familiar with these languages.</li>
+  <li>4.	Rich Text Editor: It includes a rich text editor (like the Slate editor mentioned in your code) for creating and managing content.</li>
+  <li>
+  5.	Database Agnostic: While your code uses MongoDB, Payload CMS can work with different databases through adapters.</li>
+  <li>6.	Admin Panel: It comes with a built-in admin panel that you can customize, as seen in your configuration.</li>
+  <li>7.	Open Source: Payload CMS is open-source, allowing you to contribute to its development or customize it to fit your needs.</li>
+</ul>
+
+<h2>Nodemon</h2>
+        <h3>Giới thiệu</h3>
+        <ul>
+          <li>Nodemon is a utility that helps with the development of Node.js applications by automatically restarting the server whenever file changes in the directory are detected. </li>
+          <li>1.	Automatic Restart:
+          o	Nodemon watches the files in your project and automatically restarts the Node.js application when it detects any changes. This saves you from manually stopping and starting the server every time you make a change.</li>
+          <li>2.	Customization:
+          o	You can customize which files and directories Nodemon should watch, which extensions to monitor, and what command to run when changes are detected. This is typically done through a nodemon.json configuration file.</li>
+          <li>3.	Ease of Use:
+          o	Nodemon is easy to set up and use. You can start it by simply running nodemon instead of node to start your application.</li>
+          <li>4.	Integration with Other Tools:
+          o	Nodemon can be integrated with other tools and scripts, making it a versatile tool for various development workflows.</li>
+        </ul>
+        
+        <h3>Cài đặt</h3>
+        <pre>
+          <code>npm install -g nodemon</code>
+        </pre>
+        <p>Nên cài global vì ta không cần gọi nó ở trong file js.</p>
+        <h3>Khởi chạy</h3>
+        <p>Thay vì chạy file với lệnh node tenfile.js thì Tại terminal gõ:</p>
+        <pre>
+          <code>nodemon tenfile.js</code>
+        </pre>
+        <p>
+          Trong đó, tenfile là file mà ta thiết lập chạy server (chạy express).
+        </p>
         <h2>GIT, GITHUB</h2>
         <h3>Giới thiệu về Git và Github</h3>
         <figure>

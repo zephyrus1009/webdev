@@ -1,6 +1,7 @@
 import React from 'react'
 import { Image } from 'react-bootstrap'
 import CodeSnippet from '@/components/CodeSnippet'
+import Link from 'next/link'
 const backend_tutorial = () => {
   return (
     <div>
@@ -125,7 +126,13 @@ Payload CMS is a headless content management system (CMS) designed for developer
   5.	Database Agnostic: While your code uses MongoDB, Payload CMS can work with different databases through adapters.</li>
   <li>6.	Admin Panel: It comes with a built-in admin panel that you can customize, as seen in your configuration.</li>
   <li>7.	Open Source: Payload CMS is open-source, allowing you to contribute to its development or customize it to fit your needs.</li>
+  <li>Lý do quan trọng nữa sử dụng payload cms là nó rất tương thích và có vẻ sẽ tích hợp lâu dài với nextjs.</li>
 </ul>
+<h3>Cách dùng payload cms</h3>
+<ul>
+  <li>Thay vì tạo project nextjs từ đầu thì vào <Link href="https://payloadcms.com/new">payloadcms</Link> tạo project tương ứng là ecommerce hay website... thì nó sẽ tự tạo cho ta một project nền nextjs đã được tạo sẵn admin panel, phần ecommerce... </li>
+</ul>
+
 
 <h2>Nodemon</h2>
         <h3>Giới thiệu</h3>
